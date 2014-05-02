@@ -4,9 +4,9 @@ Projet de super mario bros
 
 Contributeurs
 ==========
-Louis Behague: dévellopeur
+Louis Behague: développeur
 
-Thibault Falque: dévellopeur 
+Thibault Falque: développeur 
 
 Liens utiles
 ==========
