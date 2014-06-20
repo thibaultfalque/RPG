@@ -8,6 +8,9 @@ Louis Behague: développeur
 
 Thibault Falque: développeur 
 
+Quentin Helleboid Graphiste
+
+Geoffrey Hermin Monteur Vidéo 
 Liens utiles
 ==========
 http://www.mariouniverse.com/sprites/nes/smb3 : sites contenant pas mal de sprite pour le mario 
