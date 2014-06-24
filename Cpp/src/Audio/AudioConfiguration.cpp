@@ -3,8 +3,7 @@
 using namespace std;
 using namespace sf;
 
-AudioConfiguration::AudioConfiguration():
-    _spectrum(1, vector<float>(512, 0.f))
+AudioConfiguration::AudioConfiguration()
 {
     makeDir("configuration");
     musicPlayed=-1;
@@ -187,67 +186,6 @@ float AudioConfiguration::_pGetAudioLevel()
     return sqrt(fval);
 }
 
-vector<vector<float> > AudioConfiguration::getAudioSpectrum()
-{
-    return _spectrum;
-}
-
-
-void AudioConfiguration::_pGetAudioSpectrum()
-{
-    if (!_play || _buff_actual_music.getSampleCount() == 0 || _musics.size() == 0 || musicPlayed < 0 || musicPlayed >= (int)_musics.size())
-    {
-        _spectrum = vector<vector<float> >(1, vector<float>(512, 0.f));
-        return;
-    }
-
-    sf::Time timeOffset = _musics[musicPlayed]->getPlayingOffset();
-    unsigned int sampleRate = _musics[musicPlayed]->getSampleRate();
-    unsigned int channelCount = _musics[musicPlayed]->getChannelCount();
-    if (sampleRate != _buff_actual_music.getSampleRate()
-        || channelCount != _buff_actual_music.getChannelCount())
-    {
-        _spectrum =  vector<vector<float> >(1, vector<float>(512, 0.f));
-        return;
-    }
-
-    unsigned int samplePosition = sampleRate * channelCount * timeOffset.asSeconds();
-
-    int log2n = 12;
-    int nbAnalysedSamplePerChannel = pow(2, log2n);
-    int max_val_int16 = pow(2, 14);
-    if (channelCount != _spectrum.size())
-    {
-        _spectrum.clear();
-        _spectrum = vector<vector<float> >(channelCount, vector<float>(512, 0.f));
-    }
-    complex<double> * a = new complex<double>[nbAnalysedSamplePerChannel];
-    complex<double> * b = new complex<double>[nbAnalysedSamplePerChannel];
-    for (unsigned int c=0; c<channelCount; c++)
-    {
-
-        unsigned int j = samplePosition + c;
-        for (unsigned int i = 0; i<nbAnalysedSamplePerChannel && j<_buff_actual_music.getSampleCount(); i++)
-        {
-            a[i].imag(0);
-            a[i].real((double)_buff_actual_music.getSamples()[j]/max_val_int16);
-            j+=channelCount;
-        }
-        fft(a, b, log2n);
-        for (int i=0; i<_spectrum[c].size(); i++)
-        {
-            _spectrum[c][i] += /* 10*log10 */sqrt((b[i].real()*b[i].real()+b[i].imag()*b[i].imag()))/(nbAnalysedSamplePerChannel/4);
-            _spectrum[c][i] /= 2.f;
-        }
-
-
-    }
-
-    delete[] a;
-    delete[] b;
-
-}
-
 
 
 
@@ -283,7 +221,6 @@ void AudioConfiguration::update(){
             _musics[musicPlayed]->stop();
     }
     _level = _pGetAudioLevel();
-    _pGetAudioSpectrum();
 }
 
 

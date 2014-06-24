@@ -4,8 +4,7 @@
 #include "headers.hpp"
 #include "fn_file.hpp"
 #include "fn_random.hpp"
-#include "fn_string.hpp"
-#include "fn_audio.hpp"
+#include "fn_string.hpp"ŝ
 
 using namespace std;
 using namespace sf;
@@ -27,7 +26,6 @@ class AudioConfiguration
         int getMusicPlayingId();
 
         float getAudioLevel();
-        vector<vector<float> > getAudioSpectrum();
 
     protected:
         void loadFromFolder(std::string folder);
@@ -38,7 +36,6 @@ class AudioConfiguration
         void initDefault();
 
         float _pGetAudioLevel();
-        void _pGetAudioSpectrum();
 
     private:
         std::vector<sf::Music*> _musics;
@@ -49,8 +46,6 @@ class AudioConfiguration
         int musicPlayed;
         string _folder;
 
-
-        vector<vector<float> > _spectrum;
         float _level;
 };
 

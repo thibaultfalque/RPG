@@ -14,11 +14,20 @@ using namespace sf;
 
 class Application
 {
-    private:
 
-    public:
-        void run();
-    protected:
+private:
+    RenderWindow _window;
+    ContextSettings _window_setting;
+
+private:
+    void update();
+    void render();
+    void event();
+
+public:
+    Application();
+
+    void run();
 
 };
 

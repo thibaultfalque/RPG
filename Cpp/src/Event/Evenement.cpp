@@ -32,19 +32,7 @@ Evenement::Evenement(){
 }
 
 void Evenement::initDefault(){
-    addEventConf("Gauche",Keyboard::Left);
-    addEventConf("Droite",Keyboard::Right);
-    addEventConf("Rotation Gauche",Keyboard::Q);
-    addEventConf("Rotation Droite",Keyboard::D);
-    addEventConf("Descente Rapide",Keyboard::Down);
-    addEventConf("Descente Instantanee",Keyboard::Up);
-    addEventConf("Pause",Keyboard::Escape);
-    addEventConf("Recommencer",Keyboard::Return);
-    addEventConf("Hold Piece",Keyboard::Space);
-    addEventConf("Ecran Debug",Keyboard::F3);
-    addEventConf("Activation IA",Keyboard::F8);
-    addEventConf("IA P. Dellacherie",Keyboard::F9);
-    addEventConf("IA fait maison",Keyboard::F10);
+
 }
 
 bool Evenement::loadFromFile(string file){
