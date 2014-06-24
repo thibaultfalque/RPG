@@ -25,7 +25,7 @@ using namespace sf;
 
 
 
-class Game : public Menu
+class Game : public ScreenElement
 {
     private:
 

@@ -1,7 +1,5 @@
 #include "Evenement.hpp"
 
-#include <iostream>
-
 using namespace sf;
 using namespace std;
 
@@ -32,7 +30,7 @@ Evenement::Evenement(){
 }
 
 void Evenement::initDefault(){
-
+    //Touches par default à mettre ici ! :)
 }
 
 bool Evenement::loadFromFile(string file){

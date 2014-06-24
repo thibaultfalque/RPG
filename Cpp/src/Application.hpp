@@ -19,6 +19,9 @@ private:
     RenderWindow _window;
     ContextSettings _window_setting;
 
+    AudioConfiguration _audio;
+    Evenement _event;
+
 private:
     void update();
     void render();
