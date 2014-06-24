@@ -6,7 +6,6 @@
 		<Option platforms="Windows;Unix;" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="GUI Parts\;GUI Parts\Menu\;GUI Parts\Inputs\;GUI Parts\OpenGL\;Main\;Audio\;Non-Class\;Events\;Tetris Elements\;Scoring\;GUI Parts\Ressources\;IA\;Config\;" />
 		<Build>
 			<Target title="Debug_linux64">
 				<Option platforms="Unix;" />
@@ -24,11 +23,11 @@
 				<Linker>
 					<Add option="-lGL" />
 					<Add option="-lGLU" />
-					<Add library="SFML-2.1-linux64\lib\libsfml-audio.so" />
-					<Add library="SFML-2.1-linux64\lib\libsfml-graphics.so" />
-					<Add library="SFML-2.1-linux64\lib\libsfml-window.so" />
-					<Add library="SFML-2.1-linux64\lib\libsfml-system.so" />
-					<Add library="SFML-2.1-linux64\lib\libsfml-network.so" />
+					<Add library="SFML-2.1-linux64/lib/libsfml-audio.so" />
+					<Add library="SFML-2.1-linux64/lib/libsfml-graphics.so" />
+					<Add library="SFML-2.1-linux64/lib/libsfml-window.so" />
+					<Add library="SFML-2.1-linux64/lib/libsfml-system.so" />
+					<Add library="SFML-2.1-linux64/lib/libsfml-network.so" />
 					<Add directory="SFML-2.1-linux64/lib" />
 				</Linker>
 			</Target>
@@ -47,11 +46,11 @@
 					<Add option="-s" />
 					<Add option="-lGL" />
 					<Add option="-lGLU" />
-					<Add library="SFML-2.1-linux64\lib\libsfml-audio.so" />
-					<Add library="SFML-2.1-linux64\lib\libsfml-graphics.so" />
-					<Add library="SFML-2.1-linux64\lib\libsfml-window.so" />
-					<Add library="SFML-2.1-linux64\lib\libsfml-system.so" />
-					<Add library="SFML-2.1-linux64\lib\libsfml-network.so" />
+					<Add library="SFML-2.1-linux64/lib/libsfml-audio.so" />
+					<Add library="SFML-2.1-linux64/lib/libsfml-graphics.so" />
+					<Add library="SFML-2.1-linux64/lib/libsfml-window.so" />
+					<Add library="SFML-2.1-linux64/lib/libsfml-system.so" />
+					<Add library="SFML-2.1-linux64/lib/libsfml-network.so" />
 					<Add directory="SFML-2.1-linux64/lib" />
 				</Linker>
 			</Target>
@@ -102,7 +101,61 @@
 				</Linker>
 			</Target>
 		</Build>
-		
+		<Compiler>
+			<Add directory="src" />
+			<Add directory="src/Other" />
+			<Add directory="src/Menu/Parts" />
+			<Add directory="src/Menu/Input" />
+			<Add directory="src/Menu" />
+			<Add directory="src/Game" />
+			<Add directory="src/Function" />
+			<Add directory="src/Event" />
+			<Add directory="src/Audio" />
+		</Compiler>
+		<Unit filename="src/Application.cpp" />
+		<Unit filename="src/Application.hpp" />
+		<Unit filename="src/Audio/AudioConfiguration.cpp" />
+		<Unit filename="src/Audio/AudioConfiguration.hpp" />
+		<Unit filename="src/Event/Evenement.cpp" />
+		<Unit filename="src/Event/Evenement.hpp" />
+		<Unit filename="src/Function/fn_audio.cpp" />
+		<Unit filename="src/Function/fn_audio.hpp" />
+		<Unit filename="src/Function/fn_base64.cpp" />
+		<Unit filename="src/Function/fn_base64.hpp" />
+		<Unit filename="src/Function/fn_collision.cpp" />
+		<Unit filename="src/Function/fn_collision.hpp" />
+		<Unit filename="src/Function/fn_file.cpp" />
+		<Unit filename="src/Function/fn_file.hpp" />
+		<Unit filename="src/Function/fn_random.cpp" />
+		<Unit filename="src/Function/fn_random.hpp" />
+		<Unit filename="src/Function/fn_string.cpp" />
+		<Unit filename="src/Function/fn_string.hpp" />
+		<Unit filename="src/Function/fn_time.cpp" />
+		<Unit filename="src/Function/fn_time.hpp" />
+		<Unit filename="src/Game/Game.cpp" />
+		<Unit filename="src/Game/Game.hpp" />
+		<Unit filename="src/Menu/Input/Bouton.cpp" />
+		<Unit filename="src/Menu/Input/Bouton.hpp" />
+		<Unit filename="src/Menu/Input/BoutonLink.cpp" />
+		<Unit filename="src/Menu/Input/BoutonLink.hpp" />
+		<Unit filename="src/Menu/Input/InputCheck.cpp" />
+		<Unit filename="src/Menu/Input/InputCheck.hpp" />
+		<Unit filename="src/Menu/Input/InputKey.cpp" />
+		<Unit filename="src/Menu/Input/InputKey.hpp" />
+		<Unit filename="src/Menu/Input/InputRange.cpp" />
+		<Unit filename="src/Menu/Input/InputRange.hpp" />
+		<Unit filename="src/Menu/Input/InputSelect.cpp" />
+		<Unit filename="src/Menu/Input/InputSelect.hpp" />
+		<Unit filename="src/Menu/Input/InputText.cpp" />
+		<Unit filename="src/Menu/Input/InputText.hpp" />
+		<Unit filename="src/Menu/Menu.cpp" />
+		<Unit filename="src/Menu/Menu.hpp" />
+		<Unit filename="src/Other/Ressources.cpp" />
+		<Unit filename="src/Other/Ressources.hpp" />
+		<Unit filename="src/Other/ScreenElement.cpp" />
+		<Unit filename="src/Other/ScreenElement.hpp" />
+		<Unit filename="src/headers.hpp" />
+		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
