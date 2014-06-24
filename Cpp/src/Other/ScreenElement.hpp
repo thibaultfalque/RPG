@@ -19,6 +19,7 @@ class ScreenElement : public sf::Drawable
         virtual void onEvent(sf::Event & event);
 
 
+        virtual void update(sf::Time elapsedTime);
         virtual void update();
 
 

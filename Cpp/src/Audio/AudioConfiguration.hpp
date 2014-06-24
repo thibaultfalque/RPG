@@ -4,7 +4,7 @@
 #include "headers.hpp"
 #include "fn_file.hpp"
 #include "fn_random.hpp"
-#include "fn_string.hpp"ŝ
+#include "fn_string.hpp"
 
 using namespace std;
 using namespace sf;

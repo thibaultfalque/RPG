@@ -22,6 +22,10 @@ private:
     AudioConfiguration _audio;
     Evenement _event;
 
+    vector<ScreenElement> _states;
+    unsigned int _gameState;
+
+    sf::Clock _appTimer;
 private:
     void update();
     void render();

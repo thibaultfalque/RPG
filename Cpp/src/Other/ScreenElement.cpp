@@ -4,4 +4,5 @@ void ScreenElement::draw(sf::RenderTarget& target, sf::RenderStates states) cons
 }
 
 void ScreenElement::onEvent(sf::Event & event){}
+void ScreenElement::update(sf::Time elapsedTime){update();}
 void ScreenElement::update(){}

@@ -32,6 +32,8 @@
 #include <SFML/OpenGL.hpp>
 #include <GL/glu.h>
 
+//States
+#define GAME 0
 
 // Defines
 
