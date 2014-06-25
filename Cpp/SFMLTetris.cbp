@@ -118,10 +118,6 @@
 		<Unit filename="src/Audio/AudioConfiguration.hpp" />
 		<Unit filename="src/Event/Evenement.cpp" />
 		<Unit filename="src/Event/Evenement.hpp" />
-		<Unit filename="src/Function/fn_audio.cpp" />
-		<Unit filename="src/Function/fn_audio.hpp" />
-		<Unit filename="src/Function/fn_base64.cpp" />
-		<Unit filename="src/Function/fn_base64.hpp" />
 		<Unit filename="src/Function/fn_collision.cpp" />
 		<Unit filename="src/Function/fn_collision.hpp" />
 		<Unit filename="src/Function/fn_file.cpp" />

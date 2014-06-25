@@ -12,7 +12,8 @@ Application::Application()
     _window_setting.antialiasingLevel = 4;
     _window.create(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), L"RPG", Style::Close | Style::Titlebar | Style::Resize, _window_setting);
     _states.push_back(Game());
-    _gameState = _states.size()-1;
+   _gameState = _states.size()-1;
+
 }
 
 void Application::run()
