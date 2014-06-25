@@ -11,9 +11,13 @@ Application::Application()
     _window_setting.depthBits = 24;
     _window_setting.antialiasingLevel = 4;
     _window.create(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), L"RPG", Style::Close | Style::Titlebar | Style::Resize, _window_setting);
-    _states.push_back(Game());
+    _states.push_back(new Game());
    _gameState = _states.size()-1;
 
+}
+Application::~Application(){
+    for(unsigned int i=0;i<_states.size();++i)
+        delete _states[i];
 }
 
 void Application::run()
@@ -38,20 +42,20 @@ void Application::event()
             break;
         default:break;
         }
-        _states[_gameState].onEvent(event);
+        _states[_gameState]->onEvent(event);
     }
 }
 
 void Application::update()
 {
-    _states[_gameState].update(_appTimer.getElapsedTime());
+    _states[_gameState]->update(_appTimer.getElapsedTime());
     _appTimer.restart();
 }
 
 void Application::render()
 {
     _window.clear();
-    _window.draw(_states[_gameState]);
+    _window.draw(*(_states[_gameState]));
     _window.display();
 }
 

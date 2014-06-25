@@ -18,8 +18,8 @@ Game::Game()
 }
 void Game::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 
-    cout<<"draw"<<endl;
-    /*for(int i=0;i<50;i++)
+    //cout<<"draw"<<endl;
+    for(int i=0;i<50;i++)
         for(int j=0;j<50;j++){
             sf::Sprite s;
             switch(_map[i][j]){
@@ -54,7 +54,7 @@ void Game::draw(sf::RenderTarget& target, sf::RenderStates states) const{
                 break;
 
             }
-        }*/
+        }
     target.draw(_sprite[0],states);
 
 }
