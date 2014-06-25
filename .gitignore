@@ -10,6 +10,9 @@
 *.app
 Cpp/bin/*
 
+Cpp/res/*
+
+
 # Specifique aux projets code blocks
 *.layout
 *.depend

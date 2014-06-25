@@ -28,9 +28,6 @@
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Network.hpp>
-//Pour l'affichage 3D
-#include <SFML/OpenGL.hpp>
-#include <GL/glu.h>
 
 //States
 #define GAME 0

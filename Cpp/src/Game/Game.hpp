@@ -23,7 +23,7 @@ using namespace sf;
 class Game : public ScreenElement
 {
     private:
-        vector<sf::Sprite> _sprite;
+        vector<sf::Texture> _text;
         char *_state;
         int _map[50][50];
     protected:
