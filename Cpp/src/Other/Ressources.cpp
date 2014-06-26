@@ -1,9 +1,7 @@
 #include "Ressources.hpp"
 
 sf::Font * Ressources::default_font = nullptr;
-sf::Image * Ressources::logo = nullptr;
-sf::Image * Ressources::logoMin = nullptr;
-
+map<string,sf::Texture> Ressources::_textures;
 
 
 sf::Font * Ressources::getDefaultFont()
@@ -17,27 +15,18 @@ sf::Font * Ressources::getDefaultFont()
     return default_font;
 }
 
+sf::Texture * Ressources::getTexture(string _chemin){
 
+    if(_textures.find(_chemin) == _textures.end()){
 
-sf::Image * Ressources::getLogo()
-{
-    if (logo == nullptr)
-    {
-        logo = new sf::Image();
-        if (!logo->loadFromFile("res/Crystal_Clear_app_ksirtet.png"))
-            cerr << (L"Erreur lors du chargement du logo\nVérifiez la présence d'un fichier nommé \"res/Crystal_Clear_app_ksirtet.png\"");
+        _textures[_chemin]=sf::Texture();
+
+        if(_textures[_chemin].loadFromFile(_chemin))
+            cout << "Chargement de l'image : \"" << _chemin << "\""<<endl;
+        else
+            cout << "Erreur lors du chargement de l'image : \"" << _chemin << "\""<<endl;
+
     }
-    return logo;
-}
 
-
-sf::Image * Ressources::getLogoMin()
-{
-    if (logoMin == nullptr)
-    {
-        logoMin = new sf::Image();
-        if (!logoMin->loadFromFile("res/icone.png"))
-            cerr << (L"Erreur lors du chargement de l'icône\nVérifiez la présence d'un fichier nommé \"res/icone.png\"");
-    }
-    return logoMin;
+    return &_textures[_chemin];
 }

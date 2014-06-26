@@ -13,6 +13,7 @@
 #include "fn_random.hpp"
 #include "Evenement.hpp"
 #include "AudioConfiguration.hpp"
+#include "sol.hpp"
 #include <cassert>
 
 using namespace std;
@@ -23,19 +24,24 @@ using namespace sf;
 class Game : public ScreenElement
 {
     private:
-        vector<sf::Texture> _text;
         char *_state;
-        int _map[50][50];
+
+        Sol _sol;
+
+        RenderWindow & _window;
+        sf::View _viewMain;
+
+        Evenement & _event;
     protected:
         // sf::Drawable
         virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
     public:
 
-        Game();
+        Game(Evenement & e,RenderWindow & window);
         virtual ~Game();
 
         virtual void onEvent(sf::Event & event);
-        virtual void update();
+        virtual void update(sf::Time elapsedTime);
 
 };
 

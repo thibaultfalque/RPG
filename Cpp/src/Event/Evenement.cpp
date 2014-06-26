@@ -30,7 +30,10 @@ Evenement::Evenement(){
 }
 
 void Evenement::initDefault(){
-    //Touches par default à mettre ici ! :)
+    _eventconf["Gauche"] = sf::Keyboard::Left;
+    _eventconf["Droite"] = sf::Keyboard::Right;
+    _eventconf["Haut"] = sf::Keyboard::Up;
+    _eventconf["Bas"] = sf::Keyboard::Down;
 }
 
 bool Evenement::loadFromFile(string file){

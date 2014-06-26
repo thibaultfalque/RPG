@@ -10,12 +10,11 @@ class Ressources
 {
     public:
         static sf::Font * getDefaultFont();
-        static sf::Image * getLogo();
-        static sf::Image * getLogoMin();
+        static sf::Texture * getTexture(string _chemin);
+
     private:
         static sf::Font * default_font;
-        static sf::Image * logo;
-        static sf::Image * logoMin;
+        static map<string,sf::Texture> _textures;
 };
 
 #endif // RESSOURCES_H

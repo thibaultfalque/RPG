@@ -1,33 +1,30 @@
 #include "Game.hpp"
 
 
-Game::Game()
+Game::Game(Evenement & e,RenderWindow & window):_event(e),_window(window)
 {
-    for(int i=0;i<50;i++)
-        for(int j=0;j<50;j++)
-            _map[i][j]=rand_int(0,4);
-
-    for(int i=0;i<5;i++){
-        _text.push_back(sf::Texture());
-        if(!_text[i].loadFromFile("res/images/test/"+to_string(i)+".png")){
-            cout<<"erreur"<<endl;
-            exit(1);
-        }
-        _text[i].setSmooth(true);
-    }
+    _viewMain = _window.getDefaultView();
 }
+
 void Game::draw(sf::RenderTarget& target, sf::RenderStates states) const{
-
-    sf::Sprite s;
-    sf::Vector2i p(0,0);
-    for(int i=0;i<10;i++)
-        for(int j=0;j<10;j++){
-            s.setTexture(_text[_map[i][j]]);
-            s.setPosition(i*41 - j*41 + 450,j*21 + i*21 + 50);
-
-            target.draw(s,states);
-        }
+    _window.setView(_viewMain);
+    target.draw(_sol,states);
 }
-void Game::onEvent(sf::Event & event){}
-void Game::update(){}
+
+void Game::onEvent(sf::Event & event){
+
+}
+
+void Game::update(sf::Time elapsedTime){
+    float v = 150 * elapsedTime.asSeconds();
+    if(_event.getEventState("Droite"))
+        _viewMain.move(v,0);
+    if(_event.getEventState("Gauche"))
+        _viewMain.move(-v,0);
+    if(_event.getEventState("Haut"))
+        _viewMain.move(0,-v);
+    if(_event.getEventState("Bas"))
+        _viewMain.move(0,v);
+}
+
 Game::~Game(){}

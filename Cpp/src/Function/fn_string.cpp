@@ -32,15 +32,6 @@ string to_string( int Value )
 }
 #endif
 
-//fonction rajouter par thibault pour test
-string to_string(int Value)
-{
-    std::ostringstream oss;
-    oss << Value;
-    string nb = oss.str();
-    return nb;
-}
-//
 string to_string( int Value, unsigned int nb_car )
 {
     std::ostringstream oss;
