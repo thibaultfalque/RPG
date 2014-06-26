@@ -14,15 +14,13 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-Wextra" />
 					<Add option="-Wall" />
 					<Add option="-g" />
-					<Add option="-std=c++11" />
 					<Add directory="SFML-2.1-linux64/include" />
 				</Compiler>
 				<Linker>
-					<Add option="-lGL" />
-					<Add option="-lGLU" />
 					<Add library="SFML-2.1-linux64/lib/libsfml-audio.so" />
 					<Add library="SFML-2.1-linux64/lib/libsfml-graphics.so" />
 					<Add library="SFML-2.1-linux64/lib/libsfml-window.so" />
@@ -44,8 +42,6 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add option="-lGL" />
-					<Add option="-lGLU" />
 					<Add library="SFML-2.1-linux64/lib/libsfml-audio.so" />
 					<Add library="SFML-2.1-linux64/lib/libsfml-graphics.so" />
 					<Add library="SFML-2.1-linux64/lib/libsfml-window.so" />
@@ -111,6 +107,7 @@
 			<Add directory="src/Function" />
 			<Add directory="src/Event" />
 			<Add directory="src/Audio" />
+			<Add directory="src/Game/map" />
 		</Compiler>
 		<Unit filename="src/Application.cpp" />
 		<Unit filename="src/Application.hpp" />
@@ -130,6 +127,8 @@
 		<Unit filename="src/Function/fn_time.hpp" />
 		<Unit filename="src/Game/Game.cpp" />
 		<Unit filename="src/Game/Game.hpp" />
+		<Unit filename="src/Game/map/sol.cpp" />
+		<Unit filename="src/Game/map/sol.hpp" />
 		<Unit filename="src/Menu/Input/Bouton.cpp" />
 		<Unit filename="src/Menu/Input/Bouton.hpp" />
 		<Unit filename="src/Menu/Input/BoutonLink.cpp" />
