@@ -17,5 +17,6 @@ class Sol : public sf::Drawable{
 
         char _map[50][50];
         sf::Texture* _text[11];
+        sf::Vector2f _ratio[11];
 };
 #endif // _SOL_HPP_

@@ -28,10 +28,14 @@ void Game::onEvent(sf::Event & event){
     if(event.type == sf::Event::MouseMoved){
         _cursor.setPosition(event.mouseMove.x,event.mouseMove.y);
     }
+    if (event.type == sf::Event::MouseWheelMoved)
+    {
+       _viewGame.zoom(1-(event.mouseWheel.delta/10.0));
+    }
 }
 
 void Game::update(sf::Time elapsedTime){
-    float v = 150 * elapsedTime.asSeconds();
+    float v = 300 * elapsedTime.asSeconds();
     if(_event.getEventState("Droite"))
         _viewGame.move(v,0);
     if(_event.getEventState("Gauche"))

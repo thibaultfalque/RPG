@@ -29,16 +29,19 @@
 #include <SFML/Window.hpp>
 #include <SFML/Network.hpp>
 
-//States
-#define GAME 0
 
 // Defines
+
+//States
+#define GAME 0
 
 // Application :
 #define FPS_MAX 60
 #define WINDOW_WIDTH 960
 #define WINDOW_HEIGHT 540
 
-
+// Sol :
+#define SOL_WIDTH 80
+#define SOL_HEIGHT 40
 
 #endif // HEADERS_HPP
