@@ -28,8 +28,9 @@ class Game : public ScreenElement
 
         Sol _sol;
 
-        RenderWindow & _window;
         sf::View _viewMain;
+        sf::View _viewGame;
+        sf::Sprite _cursor;
 
         Evenement & _event;
     protected:
@@ -37,7 +38,7 @@ class Game : public ScreenElement
         virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
     public:
 
-        Game(Evenement & e,RenderWindow & window);
+        Game(Evenement & e);
         virtual ~Game();
 
         virtual void onEvent(sf::Event & event);

@@ -11,8 +11,10 @@ Application::Application()
     _window_setting.depthBits = 24;
     _window_setting.antialiasingLevel = 8;
     _window.create(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), L"RPG", Style::Close | Style::Titlebar | Style::Resize, _window_setting);
-    _states.push_back(new Game(_event,_window));
+    _states.push_back(new Game(_event));
    _gameState = _states.size()-1;
+   _window.setMouseCursorVisible(false);
+
 
 }
 Application::~Application(){
@@ -41,6 +43,7 @@ void Application::event()
             _window.close();
             break;
         default:break;
+
         }
         _states[_gameState]->onEvent(event);
     }

@@ -14,7 +14,7 @@ Sol::Sol(){
 void Sol::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 
     sf::Sprite s;
-
+    s.setOrigin(41,42);
     for(int i=0;i<50;i++)
         for(int j=0;j<50;j++){
             s.setTexture(*(_text[_map[i][j]]));
