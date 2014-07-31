@@ -4,19 +4,20 @@
 #include "headers.hpp"
 #include "fn_random.hpp"
 #include "Ressources.hpp"
+#include "fn_collision.hpp"
 
-class Sol : public sf::Drawable{
+class Sol : public sf::Drawable, public sf::Transformable{
 
     protected:
         virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
     public:
         Sol();
+        void graphicUpdate(sf::View view);
 
     private:
-
-        char _map[50][50];
-        sf::Texture* _text[11];
-        sf::Vector2f _ratio[11];
+    bool _toDraw[10][10];
+    sf::VertexArray m_vertices[10][10];
+    sf::Texture * m_tileset;
 };
 #endif // _SOL_HPP_

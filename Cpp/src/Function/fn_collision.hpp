@@ -12,5 +12,6 @@ struct AABB{
 
 bool pointInRect(AABB rect,sf::Vector2f point);
 bool pointInRect(sf::Vector2f _pos,sf::Vector2f _size,sf::Vector2f point);
+bool AABBinAABB(AABB box1,AABB box2);
 
 #endif // _COLLISION_HPP_

@@ -6,7 +6,7 @@ using namespace sf;
 
 Application::Application()
 {
-    _window.setFramerateLimit(FPS_MAX);
+    _window.setFramerateLimit(60);
     _window.setKeyRepeatEnabled(false);
     _window_setting.depthBits = 24;
     _window_setting.antialiasingLevel = 8;
@@ -52,6 +52,7 @@ void Application::event()
 void Application::update()
 {
     _states[_gameState]->update(_appTimer.getElapsedTime());
+   // cout << 1/_appTimer.getElapsedTime().asSeconds() << endl;
     _appTimer.restart();
 }
 
